@@ -22,7 +22,7 @@ public class SportService {
         sportRepository.deleteById(id);
     }
 
-    public Sport saveAthlete(Sport sport) {
+    public Sport saveSport(Sport sport) {
         Sport savedSport = sportRepository.save(sport);
         return savedSport;
     }
