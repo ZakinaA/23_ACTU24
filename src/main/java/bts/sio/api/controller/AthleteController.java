@@ -1,10 +1,13 @@
 package bts.sio.api.controller;
 
 import bts.sio.api.model.Athlete;
+import bts.sio.api.model.Pays;
+import bts.sio.api.model.Sport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import bts.sio.api.service.AthleteService;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -67,6 +70,18 @@ public class AthleteController {
             String prenom = athlete.getPrenom();
             if(prenom != null) {
                 currentAthlete.setPrenom(prenom);;
+            }
+            LocalDate datenaiss = athlete.getDateNaiss();
+            if(datenaiss != null) {
+                currentAthlete.setDateNaiss(datenaiss);;
+            }
+            Pays pays = athlete.getPays();
+            if(pays != null) {
+                currentAthlete.setPays(pays);;
+            }
+            Sport sport = athlete.getSport();
+            if(sport != null) {
+                currentAthlete.setSport(sport);;
             }
 
             athleteService.saveAthlete(currentAthlete);
