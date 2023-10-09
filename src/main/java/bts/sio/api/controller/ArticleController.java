@@ -1,12 +1,14 @@
 package bts.sio.api.controller;
 
-import bts.sio.api.model.Article;
-import bts.sio.api.model.Athlete;
+import bts.sio.api.model.*;
 import bts.sio.api.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Optional;
 
 @RestController
@@ -50,17 +52,37 @@ public class ArticleController {
             if(titre != null) {
                 currentArticle.setTitre(titre);
             }
+            String soustitre = article.getSoustitre();
+            if(soustitre != null) {
+                currentArticle.setSoustitre(soustitre);
+            }
             String contenu = article.getContenu();
             if(contenu != null) {
                 currentArticle.setContenu(contenu);;
             }
-            String auteur = article.getAuteur();
-            if(auteur != null) {
-                currentArticle.setAuteur(auteur);;
+            String image = article.getImage();
+            if(image != null) {
+                currentArticle.setImage(image);
+            }
+            LocalDate date = article.getDate();
+            if(date != null) {
+                currentArticle.setDate(date);
+            }
+            LocalTime heure = article.getHeure();
+            if(heure != null) {
+                currentArticle.setHeure(heure);;
             }
             Athlete athlete = article.getAthlete();
             if(athlete != null) {
                 currentArticle.setAthlete(athlete);;
+            }
+            Pays pays = article.getPays();
+            if(pays != null) {
+                currentArticle.setPays(pays);;
+            }
+            Auteur auteur = article.getAuteur();
+            if(auteur != null) {
+                currentArticle.setAuteur(auteur);;
             }
 
             articleService.saveArticle(currentArticle);
