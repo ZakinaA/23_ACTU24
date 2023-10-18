@@ -2,11 +2,7 @@ package bts.sio.api.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.sql.Date;
-import java.sql.Time;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Data
@@ -47,4 +43,7 @@ public class Article {
     @ManyToOne
     @JoinColumn(name = "auteur_id")
     private Auteur auteur;
+
+    @Column(name = "nomImage")
+    private String nomImage;
 }

@@ -60,10 +60,6 @@ public class ArticleController {
             if(contenu != null) {
                 currentArticle.setContenu(contenu);;
             }
-            String image = article.getImage();
-            if(image != null) {
-                currentArticle.setImage(image);
-            }
             LocalDate date = article.getDate();
             if(date != null) {
                 currentArticle.setDate(date);
@@ -83,6 +79,10 @@ public class ArticleController {
             Auteur auteur = article.getAuteur();
             if(auteur != null) {
                 currentArticle.setAuteur(auteur);;
+            }
+            String nomImage = article.getNomImage();
+            if(nomImage != null) {
+                currentArticle.setNomImage(nomImage);;
             }
 
             articleService.saveArticle(currentArticle);

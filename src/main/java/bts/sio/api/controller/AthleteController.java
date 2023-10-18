@@ -71,9 +71,9 @@ public class AthleteController {
             if(prenom != null) {
                 currentAthlete.setPrenom(prenom);;
             }
-            LocalDate datenaiss = athlete.getDateNaiss();
+            LocalDate datenaiss = athlete.getDatenaiss();
             if(datenaiss != null) {
-                currentAthlete.setDateNaiss(datenaiss);;
+                currentAthlete.setDatenaiss(datenaiss);
             }
             Pays pays = athlete.getPays();
             if(pays != null) {

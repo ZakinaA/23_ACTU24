@@ -23,7 +23,7 @@ public class Athlete {
     private String prenom;
 
     @Column(name="datenaiss")
-    private LocalDate dateNaiss;
+    private LocalDate datenaiss;
 
     @ManyToOne
     @JoinColumn(name = "pays_id")
