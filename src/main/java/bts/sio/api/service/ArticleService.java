@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Data
@@ -26,6 +27,11 @@ public class ArticleService {
     public void deleteArticle(final Long id) {
         articleRepository.deleteById(id);
     }
+
+    public List<Article> chercherArticlesParMotCle(String motCle) {
+        return articleRepository.findByTitreContaining(motCle);
+    }
+
 
     public Article saveArticle(Article article) {
         Article savedArticle = articleRepository.save(article);
